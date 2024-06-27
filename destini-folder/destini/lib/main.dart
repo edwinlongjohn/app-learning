@@ -78,7 +78,7 @@ class _StoryPageState extends State<StoryPage> {
                   child: Text(
                     storyBrain.getChoice1(),
                     style: TextStyle(
-                      fontSize: 15.0,
+                      fontSize: 16.0,
                       color: Colors.white,
                     ),
                   ),
@@ -88,27 +88,24 @@ class _StoryPageState extends State<StoryPage> {
                 height: 20.0,
               ),
               Expanded(
-                flex: 2,
-                child: Visibility(
-                  visible: storyBrain.buttonShouldBeVisible(),
-                  child: TextButton(
-                    onPressed: () {
-                      //Choice 2 made by user.
-                      choiceTwoFunction(2);
-                    },
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Colors.blue),
-                    ),
-                    child: Text(
-                      storyBrain.getChoice2(),
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15.0,
+                  flex: 2,
+                  child: Visibility(
+                    visible: storyBrain.buttonShouldBeVisible(),
+                    child: TextButton(
+                      onPressed: () {
+                        //Choice 2 made by user.
+                        choiceTwoFunction(2);
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(Colors.blue),
                       ),
+                      child: Text(storyBrain.getChoice2(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                          )),
                     ),
-                  ),
-                ),
-              ),
+                  )),
             ],
           ),
         ),

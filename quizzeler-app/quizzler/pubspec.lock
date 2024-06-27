@@ -132,7 +132,7 @@ packages:
     source: hosted
     version: "1.9.0"
   rflutter_alert:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: rflutter_alert
       sha256: "8ff35e3f9712ba24c746499cfa95bf320385edf38901a1a4eab0fe555867f66c"

@@ -2,9 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final PageController _controller = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +42,51 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 15.0,
               ),
-              Text(
-                'Flutter Developer',
-                style: GoogleFonts.greatVibes(
-                  textStyle: TextStyle(
-                    color: Color.fromARGB(255, 224, 241, 238),
-                    letterSpacing: 2.5,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
+              // PageView(
+              //   controller: _controller,
+              //   children: [
+              //     Text(
+              //       'Flutter Developer',
+              //       style: GoogleFonts.greatVibes(
+              //         textStyle: TextStyle(
+              //           color: Color.fromARGB(255, 224, 241, 238),
+              //           letterSpacing: 2.5,
+              //           fontSize: 25,
+              //           fontWeight: FontWeight.bold,
+              //         ),
+              //       ),
+              //     ),
+              //     Text(
+              //       'Flutter Developer',
+              //       style: GoogleFonts.greatVibes(
+              //         textStyle: TextStyle(
+              //           color: Color.fromARGB(255, 224, 241, 238),
+              //           letterSpacing: 2.5,
+              //           fontSize: 25,
+              //           fontWeight: FontWeight.bold,
+              //         ),
+              //       ),
+              //     ),
+              //     Text(
+              //       'Flutter Developer',
+              //       style: GoogleFonts.greatVibes(
+              //         textStyle: TextStyle(
+              //           color: Color.fromARGB(255, 224, 241, 238),
+              //           letterSpacing: 2.5,
+              //           fontSize: 25,
+              //           fontWeight: FontWeight.bold,
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              SmoothPageIndicator(
+                controller: _controller,
+                count: 3,
+                effect: const WormEffect(
+                  dotHeight: 16,
+                  dotWidth: 16,
+                  type: WormType.thinUnderground,
                 ),
               ),
               SizedBox(
@@ -94,7 +138,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
