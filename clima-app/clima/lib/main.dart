@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:clima/screens/loading_screen.dart';
+//import 'package:clima/screens/loading_screen.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home: LoadingScreen(),
+      home: const LoadingScreen(),
     );
   }
 }

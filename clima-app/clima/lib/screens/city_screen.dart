@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:clima/utilities/constants.dart';
 
@@ -8,6 +10,7 @@ class CityScreen extends StatefulWidget {
 }
 
 class _CityScreenState extends State<CityScreen> {
+  String? cityName;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +28,9 @@ class _CityScreenState extends State<CityScreen> {
               Align(
                 alignment: Alignment.topLeft,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   child: const Icon(
                     Icons.arrow_back_ios,
                     size: 50.0,
@@ -34,10 +39,18 @@ class _CityScreenState extends State<CityScreen> {
               ),
               Container(
                 padding: const EdgeInsets.all(20.0),
-                child: null,
+                child: TextField(
+                  style: TextStyle(color: Colors.black),
+                  decoration: kTextFieldDecoration,
+                  onChanged: (value) {
+                    cityName = value;
+                  },
+                ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context, cityName);
+                },
                 child: const Text(
                   'Get Weather',
                   style: kButtonTextStyle,

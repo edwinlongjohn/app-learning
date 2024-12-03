@@ -6,8 +6,8 @@ class CustomCardComponent extends StatelessWidget {
   final Color color;
   final Widget? cardChild;
   final EdgeInsets? cardPadding;
-  final Function()? selectGender;
-  const CustomCardComponent({
+  void Function()? selectGender;
+  CustomCardComponent({
     super.key,
     this.cardPadding,
     required this.color,
